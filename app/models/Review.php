@@ -4,7 +4,7 @@ class Review extends \Eloquent {
 	
 	public $errors;
 
-	protected $fillable = array('user_id', 'home_id', 'bid', 'comment');
+	protected $fillable = array('user_id', 'home_id', 'bid', 'comment','project_id','project_value');
 
 	public $rules = [
 		'user_id' => 'required',
@@ -20,6 +20,11 @@ class Review extends \Eloquent {
 	public function author()
 	{
 		return $this->belongsTo('User','user_id');
+	}
+
+	public function project()
+	{
+		return $this->hasOne('Project');
 	}
 
 	public function isValid()

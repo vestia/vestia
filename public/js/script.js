@@ -2,7 +2,7 @@ $(document).ready(function(){
 	handleReviewForm();
 });
 
-var baseURL = "http://localhost:8888/realco/public/";
+var baseURL = "http://localhost:8888/realco/public	";
 
 function handleReviewForm(){
 	var form = $('#review-form');
@@ -27,6 +27,9 @@ function handleReviewForm(){
 			url: baseURL+'/reviews',
 			data: data,
 		}).done(function(response){
+
+			//Need to handle errors here....will respond with 401 if user isn't logged in
+			alert(response);
 			$('.review-container').html(response);
 		});
 		form.slideUp();

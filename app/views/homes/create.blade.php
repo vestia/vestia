@@ -41,6 +41,12 @@
 	    	</div>
 
 	    	<div class="form-group">
+		    	{{ Form::label('cover','Photo2:')}}
+		    	{{ Form::file('cover', '', array('class' => 'form-control'))}}
+	    		{{ $errors->first('cover','<span class="text-danger">:message</span>') }}
+	    	</div>
+
+	    	<div class="form-group">
 		    	{{ Form::label('bedrooms','Bedrooms:')}}
 		    	{{ Form::select('bedrooms', array('1'=>1,'2'=>2,'3'=>3,'4'=>4,'5'=>5,'6'=>6,'7'=>7,'8'=>8,'9'=>9,'10'=>10), array('class' => 'form-control'))}}
 	    		{{ $errors->first('bedrooms','<span class="text-danger">:message</span>') }}

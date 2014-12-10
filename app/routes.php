@@ -16,6 +16,7 @@ Route::resource('users', 'UsersController');
 Route::resource('sessions', 'SessionsController');
 Route::resource('homes', 'HomesController');
 Route::resource('reviews', 'ReviewsController');
+Route::resource('projects', 'ProjectsController');
 
 //Authentication required for every request
 Route::group(array('before' => 'auth'), function(){

@@ -1,14 +1,10 @@
 <?php
 
-class ReviewsController extends \BaseController {
+class ProjectsController extends \BaseController {
 
-	public function __construct(Review $review){
-		$this->review = $review;
-		$this->beforeFilter('auth', array('except' => 'show'));
-	}
 	/**
 	 * Display a listing of the resource.
-	 * GET /reviews
+	 * GET /projects
 	 *
 	 * @return Response
 	 */
@@ -19,7 +15,7 @@ class ReviewsController extends \BaseController {
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /reviews/create
+	 * GET /projects/create
 	 *
 	 * @return Response
 	 */
@@ -30,30 +26,18 @@ class ReviewsController extends \BaseController {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /reviews
+	 * POST /projects
 	 *
 	 * @return Response
 	 */
 	public function store()
 	{
-		
-		$data = Input::all();
-
-		$this->review->fill($data);
-		$this->review->user_id = Auth::id();
-
-		if(! $this->review->isValid()){
-			return Redirect::back()->withInput()->withErrors($this->review->errors);
-		}
-
-		$review = $this->review->save();
-
-		return 'thanks for the bid';
+		//
 	}
 
 	/**
 	 * Display the specified resource.
-	 * GET /reviews/{id}
+	 * GET /projects/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -65,7 +49,7 @@ class ReviewsController extends \BaseController {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /reviews/{id}/edit
+	 * GET /projects/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -77,7 +61,7 @@ class ReviewsController extends \BaseController {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /reviews/{id}
+	 * PUT /projects/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -89,7 +73,7 @@ class ReviewsController extends \BaseController {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /reviews/{id}
+	 * DELETE /projects/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
