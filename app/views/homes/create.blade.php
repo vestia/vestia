@@ -46,29 +46,33 @@
 	    		{{ $errors->first('cover','<span class="text-danger">:message</span>') }}
 	    	</div>
 
-	    	<div class="form-group">
-		    	{{ Form::label('bedrooms','Bedrooms:')}}
-		    	{{ Form::select('bedrooms', array('1'=>1,'2'=>2,'3'=>3,'4'=>4,'5'=>5,'6'=>6,'7'=>7,'8'=>8,'9'=>9,'10'=>10), array('class' => 'form-control'))}}
-	    		{{ $errors->first('bedrooms','<span class="text-danger">:message</span>') }}
-	    	</div>
+	    	<div class="row">
+		    	<div class="form-group col-xs-6">
+			    	{{ Form::label('bedrooms','Bedrooms:')}}
+			    	{{ Form::select('bedrooms', array('1'=>1,'2'=>2,'3'=>3,'4'=>4,'5'=>5,'6'=>6,'7'=>7,'8'=>8,'9'=>9,'10'=>10), Input::old('bedrooms'),array('class' => 'form-control'))}}
+		    		{{ $errors->first('bedrooms','<span class="text-danger">:message</span>') }}
+		    	</div>
 
-	    	<div class="form-group">
-		    	{{ Form::label('bathrooms','Bathrooms:')}}
-		    	{{ Form::select('bathrooms', array('1'=>1,'2'=>2,'3'=>3,'4'=>4,'5'=>5,'6'=>6,'7'=>7,'8'=>8,'9'=>9,'10'=>10), array('class' => 'form-control'))}}
-	    		{{ $errors->first('bathrooms','<span class="text-danger">:message</span>') }}
-	    	</div>
+		    	<div class="form-group col-xs-6">
+			    	{{ Form::label('bathrooms','Bathrooms:')}}
+			    	{{ Form::select('bathrooms', array('1'=>1,'2'=>2,'3'=>3,'4'=>4,'5'=>5,'6'=>6,'7'=>7,'8'=>8,'9'=>9,'10'=>10),Input::old('bathrooms'), array('class' => 'form-control'))}}
+		    		{{ $errors->first('bathrooms','<span class="text-danger">:message</span>') }}
+		    	</div>
+		    </div>
 
-	    	<div class="form-group">
-		    	{{ Form::label('sqft','Square Feet:')}}
-		    	{{ Form::number('sqft', '', array('class' => 'form-control'))}}
-		    	{{ $errors->first('sqft','<span class="text-danger">:message</span>') }}
-	    	</div>
+		    <div class="row">
+		    	<div class="form-group col-xs-6">
+			    	{{ Form::label('sqft','Square Feet:')}}
+			    	{{ Form::number('sqft', Input::old('sqft'), array('class' => 'form-control'))}}
+			    	{{ $errors->first('sqft','<span class="text-danger">:message</span>') }}
+		    	</div>
 
-	    	<div class="form-group">
-		    	{{ Form::label('lot_size','Lot Size:')}}
-		    	{{ Form::number('lot_size', '', array('class' => 'form-control'))}}
-		    	{{ $errors->first('lot_size','<span class="text-danger">:message</span>') }}
-	    	</div>
+		    	<div class="form-group col-xs-6">
+			    	{{ Form::label('lot_size','Lot Size:')}}
+			    	{{ Form::number('lot_size', Input::old('lot_size'), array('class' => 'form-control'))}}
+			    	{{ $errors->first('lot_size','<span class="text-danger">:message</span>') }}
+		    	</div>
+		    </div>
 
 	    	<div class="form-group">
 		    	{{ Form::label('description','Describe It:')}}

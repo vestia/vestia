@@ -60,7 +60,9 @@ class ReviewsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$review = Review::find($id);
+
+		return $review;
 	}
 
 	/**

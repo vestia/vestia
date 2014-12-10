@@ -44,12 +44,16 @@ class Home extends \Eloquent {
 
 	public function owner()
 	{
-		return $this->belongsTo('User');
+		return $this->belongsTo('User','user_id');
 	}
 
 	public function reviews()
 	{
 		return $this->hasMany('Review');
+	}
+
+	public function projects(){
+		return $this->hasMany('Project');
 	}
 
 }
