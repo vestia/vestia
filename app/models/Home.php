@@ -53,7 +53,7 @@ class Home extends \Eloquent {
 	}
 
 	public function projects(){
-		return $this->hasMany('Project');
+		return $this->belongsToMany('Project');
 	}
 
 }

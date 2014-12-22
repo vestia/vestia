@@ -1,40 +1,35 @@
-@extends('layout')
-
-@section('content')
+<!-- Signup Form Markup. Gets dynamically inserted into a 'shade' element. -->
 	<section class="row">
-	    {{Form::open(['route'=>'users.store','class' => 'col-lg-6'])}}
-	    	<h3> Create New User </h3>
+	    {{Form::open(['route'=>'users.store', 'class' => 'col-lg-6 create-user'])}}
+	    	<div class="heading">
+				<span class="heading-text">Create Your Account</span>
+				<i class="center-block fa fa-angle-down"></i>
+			</div>
 	    	<div class="form-group">
-		    	{{ Form::label('first','First Name:')}}
-		    	{{ Form::text('first', '', array('class' => 'form-control'))}}
+		    	{{ Form::text('first', '', array('class' => 'form-control input-lg', 'placeholder' => 'First Name'))}}
 		    	{{ $errors->first('first','<span class="text-danger">:message</span>') }}
 	    	</div>
 
 	    	<div class="form-group">
-		    	{{ Form::label('last','Last Name:')}}
-		    	{{ Form::text('last', '', array('class' => 'form-control'))}}
+		    	{{ Form::text('last', '', array('class' => 'form-control input-lg ', 'placeholder' => 'Last Name'))}}
 		    	{{ $errors->first('last','<span class="text-danger">:message</span>') }}
 	    	</div>
 
 	    	<div class="form-group">
-		    	{{ Form::label('zipcode','Zip Code:')}}
-		    	{{ Form::text('zipcode', '', array('class' => 'form-control'))}}
+		    	{{ Form::text('zipcode', '', array('class' => 'form-control input-lg', 'placeholder' => 'Zip Code'))}}
 		    	{{ $errors->first('zipcode','<span class="text-danger">:message</span>') }}
 	    	</div>
 
 	    	<div class="form-group">
-		    	{{ Form::label('email','Email:')}}
-		    	{{ Form::email('email', '', array('class' => 'form-control', 'placeholder' => 'bob@example.com'))}}
+		    	{{ Form::email('email', '', array('class' => 'form-control input-lg', 'placeholder' => 'Email'))}}
 		    	{{ $errors->first('email','<span class="text-danger">:message</span>') }}
 	    	</div>
 			
 			<div class="form-group">
-		    	{{ Form::label('password','Password:')}}
-		    	{{ Form::password('password', array('class' => 'form-control'))}}
+		    	{{ Form::password('password', array('class' => 'form-control input-lg', 'placeholder' => 'Password'))}}
 	    		{{ $errors->first('password','<span class="text-danger">:message</span>') }}
 	    	</div>
 
-	    	{{Form::submit('Create Account', array('class' => 'btn btn-primary'));}}
+	    	{{Form::submit('Create Account', array('class' => 'btn btn-lg pill btn-invert center-block','id' => 'submit-new-user'));}}
 	    {{ Form::close()}}
     </section>
-@stop

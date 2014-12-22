@@ -42,6 +42,7 @@ class UsersController extends \BaseController {
 
 
 		if(! $this->user->isValid()){
+			//TODO - sniff for Ajax request and handle errors via JS - http://forumsarchive.laravel.io/viewtopic.php?id=9722
 			return Redirect::back()->withInput()->withErrors($this->user->errors);
 		}
 

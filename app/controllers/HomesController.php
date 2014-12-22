@@ -79,8 +79,8 @@ class HomesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$home = Home::with('projects')->find($id);
-		return View::make('homes.edit', ['home' => $home]);
+		$home = $this->home->with('projects')->find($id);
+		return View::make('homes.edit', array('home' => $home));
 	}
 
 	/**
@@ -92,7 +92,7 @@ class HomesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$home = Home::find($id);
+		$home = Home::find($id)->with('projects');
 
 		$home->fill($data = Input::all());
 

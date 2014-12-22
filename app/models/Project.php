@@ -30,11 +30,32 @@ class Project extends \Eloquent {
 		return false;
 	}
 
-	public function projects(){
+	/**
+	 * Get an array of all public projects for use in selectors
+	 * Returns an array of id => name pairs to create select input options
+	 *
+	 * @return array $projectOptions
+	 */
+	public static function getPublicProjects(){
+		
+		$publicProjects = Project::where('public','=',1)->get();
+		
+		$projectOptions = array();
+
+		foreach($publicProjects as $project){
+
+			$projectOptions = $projectOptions + array($project->id => $project->name);
+		}
+
+		return $projectOptions;
+	}
+
+
+	public function reviews(){
 		return $this->belongsToMany('Review');
 	}
 
-	public function home(){
-		return $this->belongsTo('Home');
+	public function homes(){
+		return $this->belongsToMany('Home');
 	}
 }

@@ -87,7 +87,13 @@
 	    </div>
 	    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 	      <div class="panel-body">
-	        {{ $home->projects }}
+	        @foreach($home->projects as $project)
+	        	<div class="form-group col-xs-6">
+	        		{{ Form::label('project','Project:')}}
+			    	{{ Form::select('project', Project::getPublicProjects(), array($project->id => $project->name), array('class' => 'form-control'))}}
+		    		{{ $errors->first('project','<span class="text-danger">:message</span>') }}
+			    </div>
+	        @endforeach
 	      </div>
 	    </div>
 	  </div>
