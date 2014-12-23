@@ -1,6 +1,6 @@
 <!-- Signup Form Markup. Gets dynamically inserted into a 'shade' element. -->
 	<section class="row">
-	    {{Form::open(['route'=>'users.store', 'class' => 'col-lg-6 create-user'])}}
+	    <form class="col-lg-6 create-user">
 	    	<div class="heading">
 				<span class="heading-text">Create Your Account</span>
 				<i class="center-block fa fa-angle-down"></i>
@@ -30,6 +30,9 @@
 	    		{{ $errors->first('password','<span class="text-danger">:message</span>') }}
 	    	</div>
 
-	    	{{Form::submit('Create Account', array('class' => 'btn btn-lg pill btn-invert center-block','id' => 'submit-new-user'));}}
-	    {{ Form::close()}}
+	    	<button type="button" id="submit-new-user" class="btn pill btn-lg btn-invert center-block">
+				Create Account
+				<i class="fa fa-play-circle pull-right"></i>
+			</button>
+	    </form>
     </section>

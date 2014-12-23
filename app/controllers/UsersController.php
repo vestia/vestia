@@ -37,13 +37,25 @@ class UsersController extends \BaseController {
 	public function store()
 	{
 
-		
 		$this->user->fill($data = Input::all());
 
 
 		if(! $this->user->isValid()){
-			//TODO - sniff for Ajax request and handle errors via JS - http://forumsarchive.laravel.io/viewtopic.php?id=9722
-			return Redirect::back()->withInput()->withErrors($this->user->errors);
+
+			if(Request::ajax()){
+
+				$errors = array(
+					"error" => true,
+					"data"  => $this->user->errors
+				);
+
+				return Response::json($errors);
+
+			}else{
+
+				return Redirect::back()->withInput()->withErrors($this->user->errors);
+
+			}
 		}
 
 		$user = new User;
