@@ -43,24 +43,19 @@ class UsersController extends \BaseController {
 		if(! $this->user->isValid()){
 
 			if(Request::ajax()){
-
-				$errors = array(
+				$response = array(
 					"error" => true,
-					"data"  => $this->user->errors
+					"data"  => $this->user->errors //Instance of MessageBag object
 				);
-
-				return Response::json($errors);
-
+				return Response::json($response);
 			}else{
-
 				return Redirect::back()->withInput()->withErrors($this->user->errors);
-
 			}
 		}
 
 		$user = new User;
-		$user->first = Input::get('first');
-		$user->last = Input::get('last');
+		$user->first_name = Input::get('first_name');
+		$user->last_name = Input::get('last_name');
 		$user->zipcode = Input::get('zipcode');
 		$user->email = Input::get('email');
 		$user->password = Hash::make(Input::get('password'));
@@ -68,7 +63,16 @@ class UsersController extends \BaseController {
 
 		Auth::login($user);
 
-		return Redirect::to('/dash');
+		if(Request::ajax()){
+			$response = array(
+				"error" => false,
+				"data"  => '/dash'
+			);
+			return Response::json($response);
+
+		}else{
+			return Redirect::to('/dash');
+		}
 	}
 
 

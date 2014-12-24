@@ -6,7 +6,8 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"pragmarx/zipcode": "~1.0"
+		"pragmarx/zipcode": "~1.0",
+		"doctrine/dbal": "v2.4.2"
 	},
 	"require-dev": {
     	"way/generators": "~2.0"

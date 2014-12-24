@@ -1,6 +1,9 @@
 {
   "name": "realco",
   "dependencies": {
-    "bootstrap-sass-official": "~3.3.1"
+  	"jquery": ">= 1.9.0",
+  	"bootstrap": ">= 3.1.0",
+    "bootstrap-sass-official": "~3.3.1",
+    "jasny-bootstrap" : "~3.1.3",
   }
 }

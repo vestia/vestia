@@ -11,6 +11,13 @@
 |
 */
 
+
+/*
+TODO's:
+- doublecheck which routes need auth, there routes that are public here that shouldn't be (user.create, for one, should require auth::guest
+*/
+
+
 //Resourceful routes
 Route::resource('users', 'UsersController');
 Route::resource('sessions', 'SessionsController');

@@ -8,8 +8,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public $errors;
 
 	public $rules = [
-		'first' => 'required',
-		'last' => 'required',
+		'first_name' => 'required',
+		'last_name' => 'required',
 		'email' => 'required',
 		'password' => 'required',
 		'zipcode' => 'required'
@@ -28,7 +28,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var string
 	 */
-	protected $fillable = array('first','last','email','password','zipcode');
+	protected $fillable = array('first_name','last_name','email','password','zipcode');
 
 
 
@@ -39,8 +39,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password');
 
+
 	public function name(){
-		$name = $this->first.' '.Str::limit($this->last, $limit = 1, $end = '').'.';
+		$name = $this->first_name.' '.Str::limit($this->last_name, $limit = 1, $end = '').'.';
 		return $name;
 	}
 
@@ -122,8 +123,4 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasMany('Home');
 	}
 
-	// public function links()
-	// {
-	// 	return $this->belongsToMany('Link')->withTimestamps();
-	// }
 }

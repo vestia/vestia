@@ -60,7 +60,6 @@
 		<!-- Bootstrap JavaScript -->
 		<script src="{{ URL::asset('js/bootstrap.js'); }}"></script>
 		<!-- Our JavaScript -->
-		<script src="{{URL::asset('js/main.js'); }}"></script>
 		<script src="{{URL::asset('assets/js/script.js'); }}"></script>
 
 	</body>

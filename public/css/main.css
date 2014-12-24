@@ -5636,6 +5636,8 @@ button.close {
     color: #eeeeee; }
   .form-control::-webkit-input-placeholder {
     color: #eeeeee; }
+  .form-control span.error {
+    display: hidden; }
 
 .nav-items {
   list-style: none; }
