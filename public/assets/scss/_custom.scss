@@ -1,0 +1,175 @@
+html{
+	height:100%
+}
+
+body{
+	height: 100%;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	color: $gray;
+}
+
+#page-wrap{
+	position: relative;
+	z-index: 900;
+	height: 100%;
+	background: #fff;
+	overflow: scroll;
+}
+
+#page-content{
+	min-height: 100%;
+	background:#fff;
+	margin-bottom: -168px;
+}
+
+#page-content:after {
+	height:168px;
+	content: "";
+	display: block;
+}
+
+#home-cover-carousel .carousel,
+#home-cover-carousel .carousel-inner{
+	max-height: 500px;
+}
+
+a.carousel-control{
+	display: block;
+	font-size: 48px;
+	padding-top:25%;
+}
+
+.navmenu{
+	z-index: 1;
+	width: 250px;
+}
+
+.review-container{
+	min-height: 100px;
+	color:#f4f4f4;
+	background: #333;
+}
+
+#review-form{
+	display: none;
+	color:#f5f5f5;
+}
+
+.vitals{
+	background:#f4f4f4;
+}
+
+.shade{
+
+	.modal-backdrop{
+		background: $brand-primary;
+		opacity: 0.95;
+	}
+
+	.modal-content{
+		color: #FFF;
+		background: none;
+		box-shadow: none;
+		border: none;
+	}
+
+	.shade-close{
+		color:#FFF;
+	}
+}
+
+.pill{
+	@extend .btn;
+	@include button-size(15px, 25px, 1.2em, 1, 30px); 
+}
+
+.btn-invert{
+	@include button-variant($brand-primary, #FFF, $brand-primary);
+}
+
+.btn-ko{
+	@include button-variant(#FFF, rgba(255, 255, 255, 0), #FFF);
+}
+
+.cta{
+	padding:25px;
+}
+
+.marquis{
+	text-align: center;
+	height:550px;
+	padding-top:100px;
+
+	h1{
+		color: $brand-primary;
+		font-weight: 100;
+	}
+
+	h3{font-weight: 300;}
+
+	.btn{
+		margin-top:100px;
+	}
+
+	a.login{
+		display:block;
+		padding: 10px 0;
+	}
+}
+
+.how{
+	color:#FFF;
+	background: $brand-primary;
+	padding-bottom: 75px;
+
+	.step{
+		padding: 25px 0;
+	}
+
+	.circle{
+		margin-top:10px;
+		width: 80px;
+		height:80px;
+		border-radius: 40px;
+		border:1px solid #fff;
+	}
+
+	.circle i{
+		font-size:$font-size-h3;
+		padding:29px;
+	}
+
+}
+
+.why{
+	color:$brand-primary;
+	text-align: center;
+	padding-bottom: 75px;
+
+	.light{
+		font-weight: 300;
+	}
+}
+
+.heading{
+	padding:25px 0;
+	text-align: center;
+
+	.heading-text{
+		font-size: $font-size-h4;
+		padding-bottom: 5px;
+	}
+}
+
+.global-footer{
+	position: relative;
+	bottom: 0px;
+	padding:50px;
+	color:#fff;
+	background: $brand-primary;
+
+	span{
+		text-align: center;
+	}
+}
