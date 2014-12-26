@@ -16,6 +16,9 @@
 		<!-- Our Compiled CSS -->
 		<link rel="stylesheet" type="text/css" href="{{URL::asset('css/main.css'); }}">
 
+		<!-- Slider CSS -->
+		<link rel="stylesheet" type="text/css" href="{{URL::asset('assets/vendor/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css'); }}">
+
 	</head>
 	<body>
 		<!-- Off-Canvas Nav -->
@@ -55,11 +58,11 @@
 
 
 
-		<!-- jQuery -->
-		<script src="{{ URL::asset('js/jquery.min.js'); }}"></script>
-		<!-- Bootstrap JavaScript -->
-		<script src="{{ URL::asset('js/bootstrap.js'); }}"></script>
+		<!-- Vendor JS (jQuery, Bootsrap, Others -->
+		<script src="{{ URL::asset('js/vendor.min.js'); }}"></script>
+
 		<!-- Our JavaScript -->
+		<!-- For Production, need to add our main.min.js file instead of just this -->
 		<script src="{{URL::asset('assets/js/script.js'); }}"></script>
 
 	</body>

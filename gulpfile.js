@@ -25,16 +25,34 @@ gulp.task('minifycss',function(){
     .pipe(gulp.dest('public/css'));
 });
 
-//Concat & Minify JS
-gulp.task('scripts', function() {
+//Concat & Minify Vendor JS
+gulp.task('vendor_js', function() {
 
-    //TODO - separate globs for vendor JS and our JS and send them to different files? 
-    var js_glob = [
-        'public/assets/js/*.js',
-        'public/assets/vendor/jasny-bootstrap/js/offcanvas.js'
+    var vendor_js = [
+        'public/assets/vendor/jquery/dist/jquery.js', // jQuery
+        'public/assets/vendor/modernizr/modernizr.js',  // Modernizr
+        'public/assets/vendor/jquery-bridget/jquery-bridget.js',  // Bridget
+        'public/assets/vendor/bootstrap/dist/js/bootstrap.js', // Bootstrap
+        'public/assets/vendor/jasny-bootstrap/js/offcanvas.js', // Jasny-Bootstrap Off-Canvas Component
+        'public/assets/vendor/seiyria-bootstrap-slider/js/bootstrap-slider.js'  // Seiyria Slider Component
     ];
 
-    return gulp.src(js_glob)
+    return gulp.src(vendor_js)
+        .pipe(concat('vendor.js'))
+        .pipe(gulp.dest('public/js'))
+        .pipe(rename('vendor.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('public/js'));
+});
+
+//Concat & Minify Our Own JS for production
+gulp.task('js', function() {
+
+    var js = [
+        'public/assets/js/*.js',
+    ];
+
+    return gulp.src(js)
         .pipe(concat('main.js'))
         .pipe(gulp.dest('public/js'))
         .pipe(rename('main.min.js'))

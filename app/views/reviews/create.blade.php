@@ -6,10 +6,10 @@
 	{{ Form::hidden('home_id', $home->id); }}
 	<div class="form-group">
     	{{ Form::label('bid','Bid:')}}
-    	{{ Form::number('bid', '', array('class' => 'form-control'))}}
+    	<input id="bid-slider" name="bid" class="form-control" data-slider-id='bid-slider' type="text" data-slider-min="650000" data-slider-max="1200000" data-slider-step="5000" data-slider-value="900000"/>
     	{{ $errors->first('bid','<span class="text-danger">:message</span>') }}
 	</div>
-
+	
 	<div class="form-group">
     	{{ Form::label('comment','What do you think?')}}
     	{{ Form::textarea('comment', '', array('class' => 'form-control'))}}

@@ -8,12 +8,11 @@ $(document).ready(function(){
 // and this file becomes more or less a register for those things...
 // feels like there is a library for this...
 
-
-
-var baseURL = "http://localhost:8888/realco/public	";
+var baseURL = "http://localhost:8888/realco/public";
 
 function handleReviewForm(){
 	var form = $('#review-form');
+	var slider = $('#bid-slider').slider();
 
 	//show the form
 	$('#review-toggle').click(function(){
@@ -115,12 +114,4 @@ function handleFormErrors(messageBag){
 		inputMessageElement.html(errorMessage[0]).fadeIn('fastd ');
 	});
 }
-
-
-
-
-
-
-
-
 
