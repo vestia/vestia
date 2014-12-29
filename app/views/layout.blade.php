@@ -15,10 +15,7 @@
 		
 		<!-- Our Compiled CSS -->
 		<link rel="stylesheet" type="text/css" href="{{URL::asset('css/main.css'); }}">
-
-		<!-- Slider CSS -->
-		<link rel="stylesheet" type="text/css" href="{{URL::asset('assets/vendor/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css'); }}">
-
+		
 	</head>
 	<body>
 		<!-- Off-Canvas Nav -->

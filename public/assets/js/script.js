@@ -11,15 +11,25 @@ $(document).ready(function(){
 var baseURL = "http://localhost:8888/realco/public";
 
 function handleReviewForm(){
-	var form = $('#review-form');
-	var slider = $('#bid-slider').slider();
 
 	//show the form
-	$('#review-toggle').click(function(){
+	$('#bid-toggle').click(function(e){
 
-		//TODO Need to ask PHP if the user is eligible before showing the form
-		form.slideDown('fast','swing');
-		$(this).hide();
+		//TODO Need to ask PHP if the user is eligible (our rules) before showing the form
+		e.preventDefault();
+
+		$.ajax({
+			type:"GET",
+			url: baseURL+'/reviews/create',
+		}).done(function(response){
+			$('#bid-content').html(response);	
+		}).fail(function(error){
+			console.log(error);
+			if(error.status == 401){
+				//TODO - call the login module
+				alert('You are not logged in');
+			}
+		});
 	});
 
 
@@ -56,6 +66,7 @@ function handleSignupForm(){
 	//show the form
 	$('.signup').click(function(e){
 		e.preventDefault();
+		alert('init signup form');
 		$.get(baseURL+'/users/create', function(data){
 			$('#shade-content').html(data);
 			$('#shade').modal({

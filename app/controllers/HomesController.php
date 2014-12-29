@@ -67,6 +67,11 @@ class HomesController extends \BaseController {
 	{
 		$home = Home::find($id);
 
+		if($home->owner->id == Auth::id()){
+			//this is the owner of the profile, let's show them the edit view
+			return View::make('homes.edit', array('home' => $home));
+		}
+
 		return View::make('homes.show', ['home' => $home]);
 	}
 

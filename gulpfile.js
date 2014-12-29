@@ -29,12 +29,10 @@ gulp.task('minifycss',function(){
 gulp.task('vendor_js', function() {
 
     var vendor_js = [
-        'public/assets/vendor/jquery/dist/jquery.js', // jQuery
-        'public/assets/vendor/modernizr/modernizr.js',  // Modernizr
-        'public/assets/vendor/jquery-bridget/jquery-bridget.js',  // Bridget
+        'public/assets/vendor/jquery/jquery.js', // jQuery
         'public/assets/vendor/bootstrap/dist/js/bootstrap.js', // Bootstrap
         'public/assets/vendor/jasny-bootstrap/js/offcanvas.js', // Jasny-Bootstrap Off-Canvas Component
-        'public/assets/vendor/seiyria-bootstrap-slider/js/bootstrap-slider.js'  // Seiyria Slider Component
+        'public/assets/vendor/jquery-mobile/js/jquery-mobile.js', // jQuery mobile
     ];
 
     return gulp.src(vendor_js)

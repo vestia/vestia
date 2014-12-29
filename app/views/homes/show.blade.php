@@ -24,19 +24,15 @@
     	    <a class="left carousel-control" href="#home-cover-carousel" data-slide="prev"><i class="fa fa-chevron-circle-left"></i></a>
     	    <a class="right carousel-control" href="#home-cover-carousel" data-slide="next"><i class="fa fa-chevron-circle-right"></i></span></a>
     	</div>
-
     </section>
 
-    <section class="row review-container">
+    <section class="row bid">
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-
-        @if($home->owner->id == Auth::id())
-            {{'you own this bitch, so you can '. HTML::linkRoute('homes.edit', 'edit', $home->id).' it.'}}
-        @else
-            @include('reviews.create')
-        @endif
-
-
+            <div id="bid-content"></div>
+            <button id="bid-toggle" type="button" class="btn pill btn-lg btn-ko center-block">
+                Bid to Unlock
+                <i class="fa fa-hand-o-up pull-right"></i>
+            </button>
         </div>
     </section>
 

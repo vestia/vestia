@@ -1,0 +1,22 @@
+// Home Profile
+
+#home-cover-carousel .carousel,
+#home-cover-carousel .carousel-inner{
+	max-height: 500px;
+}
+
+a.carousel-control{
+	display: block;
+	font-size: 48px;
+	padding-top:25%;
+}
+
+.bid{
+	background: $brand-primary;
+	padding-top: 20px;
+	padding-bottom:20px;
+}
+
+.vitals{
+	background:#f4f4f4;
+}

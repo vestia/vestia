@@ -25,7 +25,9 @@ class ReviewsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$home_id = Input::get('home_id');
+		$home = Home::find($home_id);
+		return View::make('reviews.create', array('home' => $home));
 	}
 
 	/**
