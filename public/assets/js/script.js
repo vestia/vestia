@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	handleSignupForm();
-	handleReviewForm();
+	Review.initBid();
 });
 
 // TODO - these should really be OO functions that align with our models...
@@ -10,51 +10,106 @@ $(document).ready(function(){
 
 var baseURL = "http://localhost:8888/realco/public";
 
-function handleReviewForm(){
 
-	//show the form
-	$('#bid-toggle').click(function(e){
+var Review = {
 
-		//TODO Need to ask PHP if the user is eligible (our rules) before showing the form
-		e.preventDefault();
+	initBid : function(){
 
-		$.ajax({
-			type:"GET",
-			url: baseURL+'/reviews/create',
-		}).done(function(response){
-			$('#bid-content').html(response);	
-		}).fail(function(error){
-			console.log(error);
-			if(error.status == 401){
-				//TODO - call the login module
-				alert('You are not logged in');
-			}
+		//show the bid form
+		$('#bid-toggle').click(function(e){
+
+			//TODO Need to ask PHP if the user is eligible (our rules) before showing the form
+			e.preventDefault();
+
+			var home_id = $(this).attr('data-home-id');
+
+			$.ajax({
+				type:"POST",
+				data:"home_id="+home_id,
+				url: baseURL+'/reviews/create/bid',
+			}).done(function(response){
+				//Populate the form
+				$('#bid-content').html(response).slideDown();
+				
+				//Change the button content
+				$('#bid-toggle').attr('id','bid-submit').html('Submit Bid');
+				
+				//Setup our submit function
+				Review.submitBid();
+
+			}).fail(function(error){s
+				console.log(error);
+				if(error.status == 401){
+					//TODO - call the login module here
+					alert('You are not logged in');
+				}
+			});
+
+			//Unbind our click event so that we can re-attach with the new submit function
+			$(this).unbind('click');
 		});
-	});
+	}, 
 
+	submitBid : function(){
 
-	//close the form
-	$('#review-close').click(function(){
-		form.slideUp();
-		$('#review-toggle').show();
-	});
+		//submit the bid
+		$('#bid-submit').click(function(e){
+			e.preventDefault();
+			console.log('click captured');
+			var data = $('#bid-form').serialize();
+			console.log(data);
+			$.ajax({
+				type: "POST",
+				url: baseURL+'/reviews',
+				data: data,
+			}).done(function(response){
+				//TODO Need to handle errors here....will respond with 401 if user isn't logged in
+				console.log(response);
+				$('#bid-content').html(response);
 
-	//submit the form
-	$('#review-submit').click(function(e){
-		e.preventDefault();
-		var data = form.serialize();
-		$.ajax({
-			type: "POST",
-			url: baseURL+'/reviews',
-			data: data,
-		}).done(function(response){
+				//Change the button content
+				$('#bid-submit').attr('id','project-submit').html('Submit Vote');
 
-			//TODO Need to handle errors here....will respond with 401 if user isn't logged in
-			alert(response);
-			$('.review-container').html(response);
+				//Setup our submit function
+				Review.submitProject();
+
+			}).fail(function(error){
+				console.log('error submitting bid', error);
+			});
+
+			//Unbind our click event so that we can re-attach with the new submit function
+			$(this).unbind('click');
 		});
-		form.slideUp();
-	});
+	},
+
+	submitProject : function(){
+
+		//Submit our project
+		$('#project-submit').click(function(e){
+			e.preventDefault();
+
+			var review_id = $('#review_id').val();
+			var data = $('#project-form').serialize();
+			console.log(data);
+			$.ajax({
+				type: "PUT",
+				url: baseURL+'/reviews/'+review_id,
+				data: data,
+			}).done(function(response){
+				console.log(response);
+				$('#bid-content').html(response);
+
+				//Change the button content
+				$('#bid-submit').attr('id','project-submit').html('Submit Vote');
+
+			}).fail(function(error){
+				console.log('error submitting project', error);
+			});
+
+			//Unbind our click event so that we can re-attach with the new submit function
+			$(this).unbind('click');
+		});
+	}
 }
 
 

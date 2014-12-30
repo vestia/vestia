@@ -37,6 +37,7 @@ Route::group(array('before' => 'auth'), function(){
 Route::get('/login', 'SessionsController@create');
 Route::get('/signup', 'UsersController@create')->before('guest');
 Route::get('/logout', 'SessionsController@destroy');
+Route::post('/reviews/create/bid', 'ReviewsController@createBid');
 
 //Splash Page
 Route::get('/', function(){

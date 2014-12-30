@@ -29,7 +29,7 @@
     <section class="row bid">
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div id="bid-content"></div>
-            <button id="bid-toggle" type="button" class="btn pill btn-lg btn-ko center-block">
+            <button id="bid-toggle" type="button" class="btn pill btn-lg btn-ko center-block" data-home-id="{{$home->id}}">
                 Bid to Unlock
                 <i class="fa fa-hand-o-up pull-right"></i>
             </button>

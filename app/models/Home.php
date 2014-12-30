@@ -42,6 +42,18 @@ class Home extends \Eloquent {
 		return false;
 	}
 
+
+	public function minBid(){
+		$minBid = $this->initial_bid - ($this->initial_bid * .2);
+		return $minBid;
+	}
+
+	public function maxBid(){
+		$minBid = $this->initial_bid + ($this->initial_bid * .2);
+		return $minBid;
+	}
+
+
 	public function owner()
 	{
 		return $this->belongsTo('User','user_id');

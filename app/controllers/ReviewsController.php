@@ -25,9 +25,20 @@ class ReviewsController extends \BaseController {
 	 */
 	public function create()
 	{
+		//
+	}
+
+	/**
+	 * Insert a new bid form into the home profile
+	 * POST /reviews/create/bid
+	 *
+	 * @return Response
+	 */
+	public function createBid()
+	{
 		$home_id = Input::get('home_id');
 		$home = Home::find($home_id);
-		return View::make('reviews.create', array('home' => $home));
+		return View::make('reviews.bid', array('home' => $home));
 	}
 
 	/**
@@ -50,7 +61,7 @@ class ReviewsController extends \BaseController {
 
 		$review = $this->review->save();
 
-		return 'thanks for the bid';
+		return View::make('reviews.project', array('review' => $this->review));
 	}
 
 	/**
@@ -88,7 +99,18 @@ class ReviewsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$review = Review::find($id);
+	
+		$review->project_id = Input::get('project_id');
+
+		if(! $review->isValid()){
+			//return Redirect::back()->withInput()->withErrors($this->review->errors);
+			return 'error';
+		}
+
+		$review->save();
+
+		return 'review updated!';
 	}
 
 	/**
