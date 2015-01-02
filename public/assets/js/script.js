@@ -37,7 +37,7 @@ var Review = {
 				//Setup our submit function
 				Review.submitBid();
 
-			}).fail(function(error){s
+			}).fail(function(error){
 				console.log(error);
 				if(error.status == 401){
 					//TODO - call the login module here

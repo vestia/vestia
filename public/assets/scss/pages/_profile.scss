@@ -1,27 +1,40 @@
 // Home Profile
 
-#home-cover-carousel .carousel,
-#home-cover-carousel .carousel-inner{
-	max-height: 500px;
-}
+#home-cover-carousel{
 
-a.carousel-control{
-	display: block;
-	font-size: 48px;
-	padding-top:25%;
-}
+	.carousel,
+	.carousel-inner{
+		max-height: 500px;
+	}
 
+	.carousel-control,
+	.carousel-control.left,
+	.carousel-control.right{
+		background: none;
+	}
 
-#bid-content{
-	display: none;
+	.carousel-caption{
+		left:0px;
+		padding:0px;
+		text-align: left;
+	}
 }
 
 .bid{
-	background: $brand-primary;
-	padding-top: 20px;
-	padding-bottom:20px;
+	background: #FFF;
+	padding-bottom: 20px;
+	border-bottom: 1px solid $brand-primary;
 }
 
 .vitals{
 	background:#f4f4f4;
+}
+
+.profile-section{
+
+	p.section-body{
+		font-size:1.2em;
+		line-height: 1.3em;
+	}
+
 }

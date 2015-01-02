@@ -37,8 +37,8 @@
 			</div><!-- /.modal -->
 
 			<!-- NavBar -->
-			<div class="navbar navbar-default navbar-fixed-top">
-		  		<div class="btn btn-primary" type="button" data-toggle="offcanvas" data-target=".navmenu" data-canvas="#page-wrap" data-recalc="false">
+			<div class="navbar navbar-transparent navbar-fixed-top">
+		  		<div class="btn btn-primary dot" type="button" data-toggle="offcanvas" data-target=".navmenu" data-canvas="#page-wrap" data-recalc="false">
 		   			<i class="fa fa-bars"></i>
 		  		</div>
 			</div>

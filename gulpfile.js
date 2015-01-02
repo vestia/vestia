@@ -11,7 +11,12 @@ var uglify = require('gulp-uglify');
 
 //Compile Sass
 gulp.task('sass', function() {
-  return gulp.src('public/assets/scss/*.scss')
+    var scss = [
+        'public/assets/scss/*.scss',
+        'public/assets/scss/pages/*.scss'
+    ]
+
+    return gulp.src(scss)
     .pipe(sass({noCache: true, 'sourcemap=none': true }))
     .pipe(autoprefixer('last 5 version'))
     .pipe(gulp.dest('public/css'))
