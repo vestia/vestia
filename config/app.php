@@ -139,11 +139,11 @@ return [
 		/*
 		 * Application Service Providers...
 		 */
-		'Vestia\Providers\AppServiceProvider',
-		'Vestia\Providers\BusServiceProvider',
-		'Vestia\Providers\ConfigServiceProvider',
-		'Vestia\Providers\EventServiceProvider',
-		'Vestia\Providers\RouteServiceProvider',
+		'App\Providers\AppServiceProvider',
+		'App\Providers\BusServiceProvider',
+		'App\Providers\ConfigServiceProvider',
+		'App\Providers\EventServiceProvider',
+		'App\Providers\RouteServiceProvider',
 
 	],
 

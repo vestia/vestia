@@ -1,4 +1,4 @@
-<?php namespace Vestia\Commands;
+<?php namespace App\Commands;
 
 abstract class Command {
 

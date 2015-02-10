@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: Vestia
-        psr4_prefix: Vestia
+        namespace: App
+        psr4_prefix: App
         src_path: app

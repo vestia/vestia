@@ -16,7 +16,7 @@
 			"database"
 		],
 		"psr-4": {
-			"Vestia\\": "app/"
+			"App\\": "app/"
 		}
 	},
 	"autoload-dev": {

@@ -1,6 +1,6 @@
-<?php namespace Vestia\Services;
+<?php namespace App\Services;
 
-use Vestia\User;
+use App\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 

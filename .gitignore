@@ -1,3 +1,9 @@
+/bootstrap/compiled.php
 /vendor
+/public/assets/vendor
 /node_modules
-.env
+composer.phar
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
