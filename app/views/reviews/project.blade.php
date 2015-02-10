@@ -1,5 +1,4 @@
 {{Form::open(['route'=>'reviews.update','id' => 'project-form'])}}
-	<h3> Project </h3>
 	{{ Form::hidden('id', $review->id, array('id' => 'review_id')); }}
 	<div class="form-group">
 		{{ Form::label('project','Which of these would have increased your bid the most?')}}

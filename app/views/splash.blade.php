@@ -2,16 +2,18 @@
 
 @section('content')
 	<section class="row marquis">
+		<div class="marquis-background"></div>
 		<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-			<h1>Realyze</h1>
-			<h3>We help homeowners understand and increase the value of their homes.</h3>
+			<div class="marquis-content">
+				<h1 class="extra-light">Realyze</h1>
+				<h3 class="light">We help homeowners understand and increase the value of their homes.</h3>
 
-			<button type="button" class="btn pill btn-lg btn-primary center-block signup">
-				Join Us Today
-				<i class="fa fa-play-circle pull-right"></i>
-			</button>
-
-			{{ HTML::link('/login', 'Log In', array('class'=>'login')) }}
+				<button type="button" class="btn pill btn-lg btn-frost center-block signup">
+					Join Us Today
+					<i class="fa fa-play-circle pull-right"></i>
+				</button>
+				{{ HTML::link('', 'Log In', array('class'=>'login')) }}
+			</div>
 		</div>
 	</section>
 
@@ -62,7 +64,7 @@
 			</div>
 
 			<div class="row cta">
-				<button type="button" class="btn pill btn-lg btn-ko center-block signup">Start Learning Now<i class="fa fa-play-circle pull-right"></i></button>
+				<button type="button" class="btn pill btn-lg btn-invert center-block signup">Start Learning Now<i class="fa fa-play-circle pull-right"></i></button>
 			</div>
 
 		</div>

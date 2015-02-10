@@ -1,6 +1,6 @@
 <!-- Signup Form Markup. Gets dynamically inserted into a 'shade' element. -->
 	<section class="row">
-	    <form id="create-new-user" class="col-lg-6" method="POST">
+	    <form id="create-new-user" class="invert" method="POST">
 	    	<div class="heading">
 				<span class="heading-text">Create Your Account</span>
 				<i class="center-block fa fa-angle-down"></i>

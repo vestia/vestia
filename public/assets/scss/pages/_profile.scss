@@ -1,20 +1,32 @@
 // Home Profile
 
+.cover{
+	background:#555;
+}
+
 #home-cover-carousel{
 
 	.carousel,
 	.carousel-inner{
-		max-height: 500px;
+		min-height: 550px;
+		max-height:550px;
+	}
+
+	img{
+		xheight:500px;
+		xmax-height: none;
+		xmax-width: none;
 	}
 
 	.carousel-control,
 	.carousel-control.left,
 	.carousel-control.right{
 		background: none;
+		top:250px;
 	}
 
 	.carousel-caption{
-		left:0px;
+		left:10px;
 		padding:0px;
 		text-align: left;
 	}
@@ -24,6 +36,25 @@
 	background: #FFF;
 	padding-bottom: 20px;
 	border-bottom: 1px solid $brand-primary;
+}
+
+.bid-trend{
+	padding:20px 0;
+	width: 80%;
+
+	.headline{
+		width: 230px;
+		font-size: 2em;
+		padding-bottom: 10px;
+	}
+
+	i.fa{
+		padding-top: 6px;
+	}
+
+	p{
+		text-align:center;
+	}
 }
 
 .vitals{
@@ -38,3 +69,17 @@
 	}
 
 }
+
+//EDIT
+i.edit{
+
+	:hover{
+		cursor: pointer;
+	}
+}
+
+
+
+
+
+

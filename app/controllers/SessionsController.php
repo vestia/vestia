@@ -32,14 +32,40 @@ class SessionsController extends \BaseController {
 	 */
 	public function store()
 	{
-		
+
+		//if the auth attempt is successful
 		if(Auth::attempt(Input::only('email','password'))){
 			$user =  Auth::user();
-			return View::make('dash', ['user' => $user]);
+
+			//check if it's an Ajax request and return appropriate response type
+			if(Request::ajax()){
+
+				$response = array(
+					"error" => false,
+					"data"  => '/dash'
+				);
+
+				return Response::json($response);
+
+			}else{
+
+				return View::make('dash', ['user' => $user]);
+			}
 		}
 
-		return Redirect::back()->withInput();
+		//if the auth attempt isn't succesful
+		if(Request::ajax()){
+			
+			$response = array(	
+					"error" => true,
+					"data"  => array('login' => ['Username/password combination is invalid.'])
+			);
 
+			return Response::json($response);
+
+		}else{
+			return Redirect::back()->withInput();
+		}
 	}
 
 
@@ -87,7 +113,7 @@ class SessionsController extends \BaseController {
 	public function destroy()
 	{
 		Auth::logout();
-		return Redirect::to('login');
+		return Redirect::to('/');
 	}
 
 

@@ -7,10 +7,9 @@
 @import '../vendor/jasny-bootstrap/scss/navmenu';
 @import '../vendor/jasny-bootstrap/scss/offcanvas';
 
-//Slider Component for Boostrap
-//(https://github.com/seiyria/bootstrap-slider)
-//@import '../vendor/seiyria-bootstrap-slider/sass/slider';
-
+//jQuery Mobile
+@import '../vendor/jquery-mobile-custom/jquery.mobile.custom.structure.min.css';
+@import '../vendor/jquery-mobile-custom/jquery.mobile.custom.theme.min.css';
 
 //Our Stuff
 @import 'variables'; //Extensions of the core TWBS variables.scss, which is still included.

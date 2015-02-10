@@ -37,7 +37,7 @@ gulp.task('vendor_js', function() {
         'public/assets/vendor/jquery/jquery.js', // jQuery
         'public/assets/vendor/bootstrap/dist/js/bootstrap.js', // Bootstrap
         'public/assets/vendor/jasny-bootstrap/js/offcanvas.js', // Jasny-Bootstrap Off-Canvas Component
-        'public/assets/vendor/jquery-mobile/js/jquery-mobile.js', // jQuery mobile
+        'public/assets/vendor/jquery-mobile/js.mobile.js', // jQuery mobile
     ];
 
     return gulp.src(vendor_js)

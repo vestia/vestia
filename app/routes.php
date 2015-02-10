@@ -34,9 +34,9 @@ Route::group(array('before' => 'auth'), function(){
 });
 
 //Some aliases
-Route::get('/login', 'SessionsController@create');
+Route::get('/login', 'SessionsController@create'); //TODO make this work with javascript form
 Route::get('/signup', 'UsersController@create')->before('guest');
-Route::get('/logout', 'SessionsController@destroy');
+Route::get('/logout', 'SessionsController@destroy'); //TODO make this work with javascript form
 Route::post('/reviews/create/bid', 'ReviewsController@createBid');
 
 //Splash Page

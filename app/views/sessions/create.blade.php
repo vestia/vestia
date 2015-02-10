@@ -1,21 +1,24 @@
-@extends('layout')
+<section class="row">
+   <form id="create-new-session" class="invert" method="POST">
+    	<div class="heading">
+			<span class="heading-text">Log In</span>
+			<i class="center-block fa fa-angle-down"></i>
+		</div>
 
-@section('content')
-	<section class="row">
-	    {{Form::open(['route'=>'sessions.store','class' => 'col-lg-6'])}}
-	    	<h3> Login </h3>
+		<span class="login error text-danger"></span>
 
-	    	<div class="form-group">
-		    	{{ Form::label('email','Email:')}}
-		    	{{ Form::email('email', '', array('class' => 'form-control', 'placeholder' => 'bob@example.com'))}}
-	    	</div>
-			
-			<div class="form-group">
-		    	{{ Form::label('password','Password:')}}
-		    	{{ Form::password('password', array('class' => 'form-control'))}}
-	    	</div>
+    	<div class="form-group">
+	    	{{ Form::email('email', '', array('class' => 'form-control input-lg', 'placeholder' => 'Email'))}}
+	    	<span class="email error text-danger"></span>
+    	</div>
+		
+		<div class="form-group">
+	    	{{ Form::password('password', array('class' => 'form-control input-lg', 'placeholder' => 'Password'))}}
+	    	<span class="password error text-danger"></span>
+    	</div>
 
-	    	{{Form::submit('Create', array('class' => 'btn btn-primary'));}}
-	    {{ Form::close()}}
-    </section>
-@stop
+    	{{Form::submit('Log In', array('class' => 'btn pill btn-invert center-block'));}}
+
+    	{{ HTML::link('', 'Sign Up', array('class'=>'signup')) }}
+    </form>
+</section>

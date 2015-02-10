@@ -1,5 +1,7 @@
 @charset "UTF-8";
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+@import url(../vendor/jquery-mobile-custom/jquery.mobile.custom.structure.min.css);
+@import url(../vendor/jquery-mobile-custom/jquery.mobile.custom.theme.min.css);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -5659,7 +5661,7 @@ button.close {
   right: 0px !important;
   opacity: 0 !important; }
 
-.form-control {
+form.invert .form-control {
   color: #ffffff;
   background: none;
   box-shadow: none;
@@ -5669,18 +5671,18 @@ button.close {
   padding: 5px 0;
   -webkit-transition: none;
           transition: none; }
-  .form-control:focus {
+  form.invert .form-control:focus {
     border-color: #fff;
     outline: 0;
     box-shadow: none; }
-  .form-control::-moz-placeholder {
+  form.invert .form-control::-moz-placeholder {
     color: #eeeeee;
     opacity: 1; }
-  .form-control:-ms-input-placeholder {
+  form.invert .form-control:-ms-input-placeholder {
     color: #eeeeee; }
-  .form-control::-webkit-input-placeholder {
+  form.invert .form-control::-webkit-input-placeholder {
     color: #eeeeee; }
-  .form-control span.error {
+  form.invert .form-control span.error {
     display: hidden; }
 
 .nav-items {
@@ -5690,15 +5692,24 @@ button.close {
   .nav-items li {
     height: 40px; }
 
+.cover {
+  background: #555; }
+
 #home-cover-carousel .carousel,
 #home-cover-carousel .carousel-inner {
-  max-height: 500px; }
+  min-height: 550px;
+  max-height: 550px; }
+#home-cover-carousel img {
+  xheight: 500px;
+  xmax-height: none;
+  xmax-width: none; }
 #home-cover-carousel .carousel-control,
 #home-cover-carousel .carousel-control.left,
 #home-cover-carousel .carousel-control.right {
-  background: none; }
+  background: none;
+  top: 250px; }
 #home-cover-carousel .carousel-caption {
-  left: 0px;
+  left: 10px;
   padding: 0px;
   text-align: left; }
 
@@ -5707,12 +5718,27 @@ button.close {
   padding-bottom: 20px;
   border-bottom: 1px solid #337ab7; }
 
+.bid-trend {
+  padding: 20px 0;
+  width: 80%; }
+  .bid-trend .headline {
+    width: 230px;
+    font-size: 2em;
+    padding-bottom: 10px; }
+  .bid-trend i.fa {
+    padding-top: 6px; }
+  .bid-trend p {
+    text-align: center; }
+
 .vitals {
   background: #f4f4f4; }
 
 .profile-section p.section-body {
   font-size: 1.2em;
   line-height: 1.3em; }
+
+i.edit :hover {
+  cursor: pointer; }
 
 html {
   height: 100%; }
@@ -5824,16 +5850,25 @@ body {
 
 .marquis {
   text-align: center;
-  height: 550px;
-  padding-top: 100px; }
-  .marquis h1 {
-    color: #337ab7;
-    font-weight: 100; }
-  .marquis h3 {
-    font-weight: 300; }
+  height: 550px; }
+  .marquis .marquis-background {
+    position: absolute;
+    width: 100%;
+    height: 550px;
+    background: transparent url("../images/1418169515-cover2.png") top center repeat;
+    background-clip: padding-box;
+    overflow: hidden;
+    -webkit-filter: blur(2px);
+            filter: blur(2px); }
+  .marquis .marquis-content {
+    padding-top: 100px; }
+  .marquis h1, .marquis h3 {
+    color: #FFF;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75); }
   .marquis .btn, .marquis .pill, .marquis .dot {
     margin-top: 100px; }
   .marquis a.login {
+    color: #FFF;
     display: block;
     padding: 10px 0; }
 
@@ -5844,6 +5879,8 @@ body {
   .how .step {
     padding: 25px 0; }
   .how .circle {
+    color: #21A976;
+    background: #fff;
     margin-top: 10px;
     width: 80px;
     height: 80px;
@@ -5864,12 +5901,27 @@ body {
   xfilter: blur(5px);
   xborder-bottom: 1px solid #FFF; }
 
+.navmenu-header {
+  height: 200px;
+  width: 100%;
+  background: transparent url("../images/logo.svg") center center no-repeat scroll; }
+
+.navmenu-nav {
+  font-size: 1.2em;
+  line-height: 1.4em;
+  color: #FFF; }
+  .navmenu-nav i.fa {
+    padding-top: 3px; }
+
 .heading {
   padding: 25px 0;
   text-align: center; }
   .heading .heading-text {
     font-size: 18px;
     padding-bottom: 5px; }
+
+h1.extra-light {
+  font-weight: 100; }
 
 h3.light {
   font-weight: 300; }
@@ -5887,6 +5939,7 @@ h3.light {
     color: #337ab7; }
 
 .global-footer {
+  margin-top: 100px;
   position: relative;
   bottom: 0px;
   padding: 50px;

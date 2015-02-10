@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	handleSignupForm();
-	Review.initBid();
+	handleLoginForm();
+	Review.init();
+	handleProfileEdits()
 });
 
 // TODO - these should really be OO functions that align with our models...
@@ -13,7 +15,7 @@ var baseURL = "http://localhost:8888/realco/public";
 
 var Review = {
 
-	initBid : function(){
+	init : function(){
 
 		//show the bid form
 		$('#bid-toggle').click(function(e){
@@ -29,8 +31,7 @@ var Review = {
 				url: baseURL+'/reviews/create/bid',
 			}).done(function(response){
 				//Populate the form
-				$('#bid-content').html(response).slideDown();
-				
+				$('#bid-content').html(response).fadeIn();
 				//Change the button content
 				$('#bid-toggle').attr('id','bid-submit').html('Submit Bid');
 				
@@ -66,6 +67,7 @@ var Review = {
 				//TODO Need to handle errors here....will respond with 401 if user isn't logged in
 				console.log(response);
 				$('#bid-content').html(response);
+				$('#bid-slider').slider('enable');
 
 				//Change the button content
 				$('#bid-submit').attr('id','project-submit').html('Submit Vote');
@@ -116,12 +118,9 @@ var Review = {
 // First test of the shade function - signup
 function handleSignupForm(){
 
-	var form = $('form.create-user');
-
 	//show the form
 	$('.signup').click(function(e){
 		e.preventDefault();
-		alert('init signup form');
 		$.get(baseURL+'/users/create', function(data){
 			$('#shade-content').html(data);
 			$('#shade').modal({
@@ -135,6 +134,8 @@ function handleSignupForm(){
 
 
 function submitSignupForm(){
+
+	var form = $('#create-new-user');
 
 	$(form).submit(function(e){
 
@@ -168,6 +169,60 @@ function submitSignupForm(){
 	});
 }
 
+function handleLoginForm(){
+
+	//show the form
+	$('.login').click(function(e){
+		e.preventDefault();
+		$.get(baseURL+'/sessions/create', function(data){
+			$('#shade-content').html(data);
+			$('#shade').modal({
+				'backdrop': 'static',
+			});
+			submitLoginForm();
+		});
+	});
+}
+
+function submitLoginForm(){
+
+	var form = $('#create-new-session');
+
+	$(form).submit(function(e){
+
+		//Prevent form from being submitted
+   		e.preventDefault();
+
+   		//Clear out some error messages
+   		$('span.error').fadeOut('fast').html('');
+
+   		//Store data from the form
+		var newSession = form.serialize();
+		console.log(newSession);
+
+		//Create a request to the server
+		$.ajax({
+			type: "POST",
+			url: baseURL+'/sessions',
+			data: newSession,
+			dataType: "json",
+			success: function(response){
+				console.log(response);
+
+				//Handle any errors
+				if(response.error == true){
+					console.log(response.data);
+					handleFormErrors(response.data);
+					exit;
+				}
+
+				//If all is well, redirect
+				window.location.href = $.trim(baseURL+response.data);
+			}
+		});
+	});
+}
+
 //Expects a JSON object - should be an instance of Laravel's message bag object
 //
 function handleFormErrors(messageBag){
@@ -179,5 +234,13 @@ function handleFormErrors(messageBag){
 		console.log(inputName,':', errorMessage[0]);
 		inputMessageElement.html(errorMessage[0]).fadeIn('fastd ');
 	});
+}
+
+
+function handleProfileEdits(){
+	$('i.edit').click(function(){
+		var section = $(this).data('section');
+		alert(section);
+	})
 }
 
