@@ -1,4 +1,4 @@
-<?php namespace App\Events;
+<?php namespace Vestia\Events;
 
 abstract class Event {
 
