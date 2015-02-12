@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "24c3946acc997e3f3eca7fc5c99585b2",
+    "hash": "45348df2f8acf6304d5530b61352bd54",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -68,16 +68,16 @@
         },
         {
             "name": "danielstjules/stringy",
-            "version": "1.8.1",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/danielstjules/Stringy.git",
-                "reference": "6a7b0391b2baf0bfdca3ec0c8d33ff379c2835ad"
+                "reference": "3cf18e9e424a6dedc38b7eb7ef580edb0929461b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danielstjules/Stringy/zipball/6a7b0391b2baf0bfdca3ec0c8d33ff379c2835ad",
-                "reference": "6a7b0391b2baf0bfdca3ec0c8d33ff379c2835ad",
+                "url": "https://api.github.com/repos/danielstjules/Stringy/zipball/3cf18e9e424a6dedc38b7eb7ef580edb0929461b",
+                "reference": "3cf18e9e424a6dedc38b7eb7ef580edb0929461b",
                 "shasum": ""
             },
             "require": {
@@ -120,7 +120,7 @@
                 "utility",
                 "utils"
             ],
-            "time": "2015-01-08 15:21:43"
+            "time": "2015-02-10 06:19:18"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -221,6 +221,216 @@
                 "string"
             ],
             "time": "2014-12-20 21:24:13"
+        },
+        {
+            "name": "guzzle/guzzle",
+            "version": "v3.9.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle3.git",
+                "reference": "54991459675c1a2924122afbb0e5609ade581155"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/54991459675c1a2924122afbb0e5609ade581155",
+                "reference": "54991459675c1a2924122afbb0e5609ade581155",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.3",
+                "symfony/event-dispatcher": "~2.1"
+            },
+            "replace": {
+                "guzzle/batch": "self.version",
+                "guzzle/cache": "self.version",
+                "guzzle/common": "self.version",
+                "guzzle/http": "self.version",
+                "guzzle/inflection": "self.version",
+                "guzzle/iterator": "self.version",
+                "guzzle/log": "self.version",
+                "guzzle/parser": "self.version",
+                "guzzle/plugin": "self.version",
+                "guzzle/plugin-async": "self.version",
+                "guzzle/plugin-backoff": "self.version",
+                "guzzle/plugin-cache": "self.version",
+                "guzzle/plugin-cookie": "self.version",
+                "guzzle/plugin-curlauth": "self.version",
+                "guzzle/plugin-error-response": "self.version",
+                "guzzle/plugin-history": "self.version",
+                "guzzle/plugin-log": "self.version",
+                "guzzle/plugin-md5": "self.version",
+                "guzzle/plugin-mock": "self.version",
+                "guzzle/plugin-oauth": "self.version",
+                "guzzle/service": "self.version",
+                "guzzle/stream": "self.version"
+            },
+            "require-dev": {
+                "doctrine/cache": "~1.3",
+                "monolog/monolog": "~1.0",
+                "phpunit/phpunit": "3.7.*",
+                "psr/log": "~1.0",
+                "symfony/class-loader": "~2.1",
+                "zendframework/zend-cache": "2.*,<2.3",
+                "zendframework/zend-log": "2.*,<2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Guzzle": "src/",
+                    "Guzzle\\Tests": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Guzzle Community",
+                    "homepage": "https://github.com/guzzle/guzzle/contributors"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2014-08-11 04:32:36"
+        },
+        {
+            "name": "guzzlehttp/guzzle",
+            "version": "4.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "66fd916e9f9130bc22c51450476823391cb2f67c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/66fd916e9f9130bc22c51450476823391cb2f67c",
+                "reference": "66fd916e9f9130bc22c51450476823391cb2f67c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/streams": "~2.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "~4.0",
+                "psr/log": "~1.0"
+            },
+            "suggest": {
+                "ext-curl": "Guzzle will use specific adapters if cURL is present"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2014-10-05 19:29:14"
+        },
+        {
+            "name": "guzzlehttp/streams",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/streams.git",
+                "reference": "f91b721d73f0e561410903b3b3c90a5d0e40b534"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/streams/zipball/f91b721d73f0e561410903b3b3c90a5d0e40b534",
+                "reference": "f91b721d73f0e561410903b3b3c90a5d0e40b534",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Stream\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Provides a simple abstraction over streams of data (Guzzle 4+)",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "Guzzle",
+                "stream"
+            ],
+            "time": "2014-08-17 21:15:53"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -410,16 +620,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.0.2",
+            "version": "v5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "30391aa20874c30725f653bea1ea5b895a5217cf"
+                "reference": "b5eafda7dba3d1367a63095b83a068a73d32d97f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/30391aa20874c30725f653bea1ea5b895a5217cf",
-                "reference": "30391aa20874c30725f653bea1ea5b895a5217cf",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/b5eafda7dba3d1367a63095b83a068a73d32d97f",
+                "reference": "b5eafda7dba3d1367a63095b83a068a73d32d97f",
                 "shasum": ""
             },
             "require": {
@@ -531,7 +741,61 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-02-06 23:14:12"
+            "time": "2015-02-11 20:37:48"
+        },
+        {
+            "name": "laravel/socialite",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/socialite.git",
+                "reference": "ca028df357d9585be55ec2db48f591dbbfbdd3cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/ca028df357d9585be55ec2db48f591dbbfbdd3cf",
+                "reference": "ca028df357d9585be55ec2db48f591dbbfbdd3cf",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~4.0",
+                "illuminate/contracts": "~5.0",
+                "illuminate/http": "~5.0",
+                "illuminate/support": "~5.0",
+                "league/oauth1-client": "~1.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Socialite\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "Laravel wrapper around OAuth 1 & OAuth 2 libraries.",
+            "keywords": [
+                "laravel",
+                "oauth"
+            ],
+            "time": "2015-01-23 19:59:22"
         },
         {
             "name": "league/flysystem",
@@ -615,6 +879,69 @@
                 "storage"
             ],
             "time": "2015-01-23 09:43:34"
+        },
+        {
+            "name": "league/oauth1-client",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth1-client.git",
+                "reference": "2bcdde3df4e59ebefd2be902102ac185ade844b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/2bcdde3df4e59ebefd2be902102ac185ade844b7",
+                "reference": "2bcdde3df4e59ebefd2be902102ac185ade844b7",
+                "shasum": ""
+            },
+            "require": {
+                "guzzle/guzzle": "3.*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.7.2",
+                "phpunit/phpunit": "*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth1\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Corlett",
+                    "email": "bencorlett@me.com",
+                    "homepage": "http://www.webcomm.com.au",
+                    "role": "Developer"
+                }
+            ],
+            "description": "OAuth 1.0 Client Library",
+            "keywords": [
+                "Authentication",
+                "SSO",
+                "authorization",
+                "bitbucket",
+                "identity",
+                "idp",
+                "oauth",
+                "oauth1",
+                "single sign on",
+                "trello",
+                "tumblr",
+                "twitter"
+            ],
+            "time": "2015-02-01 23:22:54"
         },
         {
             "name": "monolog/monolog",
@@ -863,16 +1190,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.3.3",
+            "version": "v0.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "0355cecab0591c83fed019a9572c510b0da29174"
+                "reference": "218ea9e49c9fe21e28fce6cf77f22615af92daef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/0355cecab0591c83fed019a9572c510b0da29174",
-                "reference": "0355cecab0591c83fed019a9572c510b0da29174",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/218ea9e49c9fe21e28fce6cf77f22615af92daef",
+                "reference": "218ea9e49c9fe21e28fce6cf77f22615af92daef",
                 "shasum": ""
             },
             "require": {
@@ -929,7 +1256,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2015-01-20 21:18:03"
+            "time": "2015-02-12 05:21:32"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1725,6 +2052,52 @@
                 "environment"
             ],
             "time": "2014-12-05 15:19:21"
+        },
+        {
+            "name": "way/generators",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JeffreyWay/Laravel-4-Generators.git",
+                "reference": "4a215769643507326192a739058a0c7105d932b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JeffreyWay/Laravel-4-Generators/zipball/4a215769643507326192a739058a0c7105d932b5",
+                "reference": "4a215769643507326192a739058a0c7105d932b5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "behat/behat": "~2.5.1",
+                "behat/mink": "~1.5.0",
+                "behat/mink-extension": "~1.2.0",
+                "behat/mink-goutte-driver": "~1.0.9",
+                "behat/mink-selenium2-driver": "~1.1.1",
+                "phpspec/phpspec": "~2.0",
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Way\\Generators": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@jeffrey-way.com"
+                }
+            ],
+            "description": "Rapidly generate resources, migrations, models, and much more.",
+            "time": "2014-10-01 04:00:00"
         }
     ],
     "packages-dev": [
