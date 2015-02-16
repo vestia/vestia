@@ -28,4 +28,14 @@ class Photo extends Model {
 		return $this->morphTo();
 	}
 
+	/**
+	 * The photo's tagged features
+	 *
+	 * @return object(s)
+	 */
+	public function features()
+	{
+		return $this->hasMany('Vestia\Feature');
+	}
+
 }

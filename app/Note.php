@@ -45,7 +45,7 @@ class Note extends Model {
 	 */
 	public function estimate()
 	{
-		$this->hasOne('Vestia\Estimate');
+		return $this->hasOne('Vestia\Estimate');
 	}
 
 	/**
@@ -55,7 +55,7 @@ class Note extends Model {
 	 */
 	public function project()
 	{
-		$this->hasOne('Vestia\Project');
+		return $this->hasOne('Vestia\Project');
 	}
 
 	/**
@@ -65,6 +65,6 @@ class Note extends Model {
 	 */
 	public function comment()
 	{
-		$this->hasOne('Vestia\Comment');
+		return $this->hasOne('Vestia\Comment');
 	}
 }
