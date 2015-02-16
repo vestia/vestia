@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model {
 
-		/**
+	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
@@ -16,17 +16,7 @@ class Comment extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['home_id', 'user_id', 'note_id','text'];
-
-	/**
-	 * The commenter relationships
-	 *
-	 * @return object(s)
-	 */
-	public function user()
-	{
-		$this->belongsTo('Vestia\User');
-	}
+	protected $fillable = ['note_id','text'];
 
 	/**
 	 * The comment home relationships
