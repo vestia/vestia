@@ -23,9 +23,9 @@ class Home extends Model {
 	 *
 	 * @return object(s)
 	 */
-	public function owner()
+	public function owners()
 	{
-		$this->belongsToMany('Vestia\User','home_owners');
+		return $this->belongsToMany('Vestia\User','home_owners')->withTimestamps();
 	}
 
 	/**
@@ -33,9 +33,9 @@ class Home extends Model {
 	 *
 	 * @return objects(s)
 	 */
-	public function follwers()
+	public function followers()
 	{
-		$this->belongsToMany('Vestia\User','home_followers');
+		return $this->belongsToMany('Vestia\User','home_followers')->withTimestamps();
 	}
 
 	/**
@@ -45,7 +45,37 @@ class Home extends Model {
 	 */
 	public function spaces()
 	{
-		$this->hasMany('Vestia\Space');
+		return $this->hasMany('Vestia\Space');
+	}
+
+	/**
+	 * The home's feature relationships
+	 *
+	 * @return object(s)
+	 */
+	public function features()
+	{
+		return $this->hasMany('Vestia\Feature');
+	}
+
+	/**
+	 * The home's update relationships
+	 *
+	 * @return object(s)
+	 */
+	public function updates()
+	{
+		return $this->hasMany('Vestia\Update');
+	}
+
+	/**
+	 * The home's update relationships
+	 *
+	 * @return object(s)
+	 */
+	public function notes()
+	{
+		return $this->hasMany('Vestia\Note');
 	}
 
 }

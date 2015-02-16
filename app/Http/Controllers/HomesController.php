@@ -15,7 +15,7 @@ class HomesController extends Controller {
 	 */
 	public function index()
 	{
-		return Home::all(); 
+		return Home::with('spaces','owners','followers','updates','notes')->get(); 
 	}
 
 	/**

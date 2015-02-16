@@ -31,4 +31,24 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+	/**
+	 * The homes the user owners
+	 *
+	 * @return objects(s)
+	 */
+	public function owns()
+	{
+		return $this->belongsToMany('Vestia\Home','home_owners')->withTimestamps();
+	}
+
+	/**
+	 * The homes the user follows
+	 *
+	 * @return objects(s)
+	 */
+	public function follows()
+	{
+		return $this->belongsToMany('Vestia\Home','home_followers')->withTimestamps();
+	}
+
 }

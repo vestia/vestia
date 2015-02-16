@@ -19,13 +19,23 @@ class Space extends Model {
 	protected $fillable = ['home_id', 'type', 'name'];
 
 	/**
-	 * The home owner relationships
+	 * The space's home relationship
 	 *
 	 * @return object(s)
 	 */
 	public function home()
 	{
 		$this->belongsTo('Vestia\Home');
+	}
+
+	/**
+	 * The space's photo relationships
+	 *
+	 * @return object(s)
+	 */
+	public function photos()
+	{
+		 return $this->morphMany('Vestia\Photo', 'imageable');
 	}
 
 }

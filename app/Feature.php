@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Notes extends Model {
+class Feature extends Model {
 
 	//
 
