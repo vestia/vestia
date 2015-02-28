@@ -2,14 +2,14 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Note extends Model {
+class Review extends Model {
 
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'notes';
+	protected $table = 'reviews';
 
 	/**
 	 * The attributes that are mass assignable.
@@ -19,7 +19,7 @@ class Note extends Model {
 	protected $fillable = ['home_id', 'user_id', 'project_id','estimate_id','comment_id'];
 
 	/**
-	 * The note's home relationship
+	 * The review's home relationship
 	 *
 	 * @return objects(s)
 	 */
@@ -29,7 +29,7 @@ class Note extends Model {
 	}
 
 	/**
-	 * The note's author relationship
+	 * The review's author relationship
 	 *
 	 * @return objects(s)
 	 */
@@ -39,7 +39,7 @@ class Note extends Model {
 	}
 
 	/**
-	 * The note's estimate relationship
+	 * The review's estimate relationship
 	 *
 	 * @return objects(s)
 	 */
@@ -49,7 +49,7 @@ class Note extends Model {
 	}
 
 	/**
-	 * The note's project relationship
+	 * The review's project relationship
 	 *
 	 * @return objects(s)
 	 */
@@ -59,7 +59,7 @@ class Note extends Model {
 	}
 
 	/**
-	 * The note's comment relationship
+	 * The review's comment relationship
 	 *
 	 * @return objects(s)
 	 */

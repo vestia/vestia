@@ -2,13 +2,13 @@
 ---
 
 #### Seeds & Models
-- [ ] Projects
-- [ ] Notes
-- [ ] Photos
-- [ ] Updates
-- [ ] Features
+- [x] Projects
+- [x] Notes
+- [x] Photos
+- [x] Updates
+- [x] Features
 
 #### Controllers
-- 
+- [ ] Homes
 
 #### Routes

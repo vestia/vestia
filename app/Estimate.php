@@ -16,16 +16,16 @@ class Estimate extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['note_id','median_psf_percent_delta','calculated_time_of_estimate_value','calculated_current_value'];
+	protected $fillable = ['review_id','median_psf_percent_delta','calculated_time_of_estimate_value','calculated_current_value'];
 
 	/**
 	 * The comment home relationships
 	 *
 	 * @return objects(s)
 	 */
-	public function note()
+	public function review()
 	{
-		$this->belongsTo('Vestia\Note');
+		$this->belongsTo('Vestia\Review');
 	}
 
 }

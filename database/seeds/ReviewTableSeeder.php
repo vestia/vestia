@@ -2,7 +2,7 @@
 
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
-use Vestia\Note;
+use Vestia\Review;
 
 class NoteTableSeeder extends DatabaseSeeder{
 
@@ -16,11 +16,11 @@ class NoteTableSeeder extends DatabaseSeeder{
 
         $faker = Faker::create();
 
-        Note::truncate();
+        Review::truncate();
         
         foreach(range(1, 20) as $index)
         {
-            Note::create([
+            Review::create([
             	'home_id' => $faker->numberBetween($min = 1, $max = 20),
             	'user_id' => $faker->numberBetween($min = 1, $max = 100),
                 'project_id' => $faker->numberBetween($min = 1, $max = 100),

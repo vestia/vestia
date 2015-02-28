@@ -16,16 +16,16 @@ class Comment extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['note_id','text'];
+	protected $fillable = ['review_id','text'];
 
 	/**
 	 * The comment home relationships
 	 *
 	 * @return objects(s)
 	 */
-	public function note()
+	public function review()
 	{
-		$this->belongsTo('Vestia\Note');
+		$this->belongsTo('Vestia\Review');
 	}
 
 }

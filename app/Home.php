@@ -1,6 +1,7 @@
 <?php namespace Vestia;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Validator;
 
 class Home extends Model {
 
@@ -10,6 +11,39 @@ class Home extends Model {
 	 * @var string
 	 */
 	protected $table = 'homes';
+
+	/**
+	 * A variable to hold our errors
+	 */
+	public $errors;
+
+	/**
+	 * Validation rules for homes. Used in the isValid() method.
+	 *
+	 */
+	public $rules = [
+		'street' => 'required',
+		'city' => 'required',
+		'zipcode' => 'required',
+	];
+
+	/**
+	 * 
+	 * Method that determines whether or not a home's data is valid.
+	 *
+	 * @return bool
+	 */
+	public function isValid()
+	{
+
+		$validation = Validator::make($this->attributes, $this->rules);
+		
+		if($validation->passes()) return true;
+
+		$this->errors = $validation->messages();
+		return false;
+	}
+
 
 	/**
 	 * The attributes that are mass assignable.
@@ -73,9 +107,9 @@ class Home extends Model {
 	 *
 	 * @return object(s)
 	 */
-	public function notes()
+	public function reviews()
 	{
-		return $this->hasMany('Vestia\Note');
+		return $this->hasMany('Vestia\Review');
 	}
 
 }
