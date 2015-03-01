@@ -88,30 +88,33 @@ class HomesController extends Controller {
 	{
 		$home = Home::find($id);
 
-		return Input::get('owner_estimate');
-		//$home->fill($data = Input::all());
+		print_r($home);
+		
+		echo '<hr>';
 
+		foreach(Input::all() as $input=>$value){
+			$home->$input = $value;
+		}
 
-		// if(! $this->home->isValid()){
+		if(! $home->isValid()){
 
-		// 	$response = Response::json([
-		// 		"error" => true,
-		// 		"data" => $this->home->errors
-		// 	], 500);
+			$response = Response::json([
+				"error" => true,
+				"data" => $home->errors
+			], 500);
 
-		// 	return $response;
-		// }
+			return $response;
+		}
 
-		// //If the home is valid
-		// $user = User::find(1);
-		// $home = $user->owns()->save($this->home);
+		//If the home is valid
+		$home->save();
 
-		// $response = Response::json([
-		// 		"error" => false,
-		// 		"data" => $home
-		// 	], 200);
+		$response = Response::json([
+				"error" => false,
+				"data" => $home
+			], 200);
 
-		// return $response;
+		return $response;
 
 	}
 
